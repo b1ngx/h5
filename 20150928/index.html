@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>象棋摆局解密</title>
+    <style>body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,header,hgroup,nav,section,article,aside,footer,figure,figcaption,menu,button{margin:0;padding:0}body{font-family:"Helvetica Neue",Helvetica,STHeiTi,sans-serif;line-height:1.5;font-size:16px;color:#000;background-color:#f8f8f8;-webkit-user-select:none;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;outline:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}table{border-collapse:collapse;border-spacing:0}caption,th{text-align:left}fieldset,img{border:0}li{list-style:none}ins{text-decoration:none}del{text-decoration:line-through}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:0}button{-webkit-appearance:none;border:0;background:0}a{-webkit-touch-callout:none;text-decoration:none}:focus{outline:0;-webkit-tap-highlight-color:transparent}em,i{font-style:normal}@media screen and (max-width:319px){html{font-size:85.33333px}}@media screen and (min-width:320px) and (max-width:359px){html{font-size:85.33333px}}@media screen and (min-width:360px) and (max-width:374px){html{font-size:96px}}@media screen and (min-width:375px) and (max-width:383px){html{font-size:100px}}@media screen and (min-width:384px) and (max-width:399px){html{font-size:102.4px}}@media screen and (min-width:400px) and (max-width:413px){html{font-size:106.66667px}}@media screen and (min-width:414px){html{font-size:110.4px}}</style>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?e7582b8c916270b4efb1d36b38703323";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <section>
+        <p style="padding: 15px">
+            一天，女孩喝醉了，男孩送女孩回家，开了门，
+            发现情况不对，女孩从家里翻出象棋摆好局，
+            男孩5秒内看懂了，摔门而去？为什么？
+        </p>
+        <div style="text-align: center;">
+            <img src="t.jpg" alt="" style="width: 80%"/>
+        </div>
+        <p style="text-align: center;margin-top: 20px">（转发即可揭晓答案）</p>
+    </section>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        var app={initialize:function(){this.section=document.querySelectorAll("section"),this.options={timestamp:Date.now(),url:location.href.split("#")[0],nonceStr:Math.random().toString(36).substr(2),title:"象棋摆局解密。【看完没有几个不转的】",desc:"象棋中红“帅”是男孩，黑“将”是女孩，这棋是红的先走，其实会下棋的人都能看明白",link:"http://wx.hr72.com/20150928/index.html",imgUrl:"http://wx.hr72.com/20150928/t.jpg"},this.getSignature()},isWeixin:function(){var a=navigator.userAgent.toLowerCase();return"micromessenger"==a.match(/MicroMessenger/i)?!0:!1},ajax:function(a,b,c,d){var e=new XMLHttpRequest;e.open(a,b,!0),e.send(c?c:null),e.onreadystatechange=function(){if(4==e.readyState){var a;e.status>=200&&e.status<300||304==e.status?(a=e.responseText,d(a)):alert(e.statusText||"ajax error")}}},getSignature:function(){var a=this,b=a.options,c="http://mp.linkin.net/Account/GetSignature?timestamp="+b.timestamp+"&url="+encodeURIComponent(b.url)+"&nonceStr="+b.nonceStr;this.ajax("GET",c,null,function(b){a.wxConfig(b)})},wxConfig:function(a){var b=this,c=this.options;wx.config({debug:0,appId:"wx76545552ca4bc8af",timestamp:c.timestamp,nonceStr:c.nonceStr,signature:a,jsApiList:["checkJsApi","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo"]}),wx.ready(function(){b.shareOnReady()})},shareOnReady:function(){var a=this,b=a.options;wx.onMenuShareTimeline({title:b.title,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}}),wx.onMenuShareAppMessage({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,type:"link",dataUrl:"",success:function(){a.share()},cancel:function(){}}),wx.onMenuShareQQ({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}}),wx.onMenuShareWeibo({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}})},share:function(){location.href="http://mp.weixin.qq.com/s?__biz=MzIwMjAwMDgzNg==&mid=211724379&idx=1&sn=35bdc96dd6804d5b677ffe0f0258ffdd#rd"}};app.initialize();
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-67787459-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

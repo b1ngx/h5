@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>实时数据</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <h2></h2>
+    <div class="row">
+        <div class="col-sm-4">
+            One of three columns
+        </div>
+        <div class="col-sm-4">
+            One of three columns
+        </div>
+        <div class="col-sm-4">
+            One of three columns
+        </div>
+    </div>
+</div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/zh-cn.js"></script>
+<script>
+    $(function(){
+        setInterval(function(){
+            $('h2').html(moment().format('YYYY年MM月DD日 HH:mm:ss'));
+        }, 1000);
+    });
+</script>
+</body>
+</html>

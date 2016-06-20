@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>测一测你的另一半值多少钱？</title>
+    <link rel="stylesheet" href="frozen.css"/>
+    <style>
+        body{
+            color: #fff;
+        }
+        .guide,.main,.share,.result{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            background-size:cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        .guide{
+            background-image: url("1.jpg");
+            text-align: center;
+        }
+        .guide button{
+            background: #f75150;
+            position: absolute;
+            left: 20%;
+            bottom: 50px;
+            width: 60%;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 30px;
+            font-size: 24px;
+            border: 0;
+            color: #fff;
+        }
+        .guide button:active{
+            -webkit-transform: scale(0.96);
+            transform: scale(0.96);
+        }
+        footer{
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+        .main{
+            display: none;
+            background-color: #d9ecff;
+            text-align: center;
+        }
+        .main img{
+            max-height: 40%;
+            display: inline-block;
+            margin-top: 40px;
+        }
+        .main h3{
+            position: absolute;
+            top: 8px;
+            width: 100%;
+            text-align: center;
+            color: #333;
+        }
+        .main .title{
+            font-size: 18px;
+            color: #fff;
+            background-color: #f75150;
+            width: 70%;
+            margin: -30px auto 0;
+            height: 40px;
+            padding: 40px 20px;
+            text-align: left;
+        }
+        .main .radio{
+            width: 60%;
+            padding: 0;
+            margin: 30px auto 0;
+        }
+        .main .label{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 80px;
+            background-color: #f75150;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+        }
+        .main .label:active{
+            -webkit-transform: scale(0.90);
+            transform: scale(0.90);
+        }
+        .main .label:nth-child(2){
+            background-color: #ffdb3c;
+        }
+        .main input{
+            display: none;
+        }
+        .share{
+            display: none;
+            background-image: url("3.jpg");
+        }
+        .view-result{
+            position: absolute;
+            top: 44%;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+        }
+        .result{
+            display: none;
+            background-image: url("4.jpg");
+        }
+        .result div{
+            position: absolute;
+            top: 33%;
+            color: #333;
+            text-align: center;
+            width: 70%;
+            left: 15%;
+            -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+            font-size: 18px;
+        }
+        .link-in{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 140px;
+            width: 100%;
+        }
+    </style>
+    <style>
+        .animated {
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes fadeInRight {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(100%, 0, 0);
+                transform: translate3d(100%, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        .fadeInRight {
+            -webkit-animation-name: fadeInRight;
+            animation-name: fadeInRight;
+        }
+
+        @-webkit-keyframes zoomIn {
+            from {
+                opacity: 0;
+                -webkit-transform: scale3d(.3, .3, .3);
+                transform: scale3d(.3, .3, .3);
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                -webkit-transform: scale3d(.3, .3, .3);
+                transform: scale3d(.3, .3, .3);
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .zoomIn {
+            -webkit-animation-name: zoomIn;
+            animation-name: zoomIn;
+        }
+    </style>
+</head>
+<body>
+<div class="guide">
+    <button>开始测试</button>
+    <footer>
+        金领英才出品 www.linkin.net
+    </footer>
+</div>
+<div class="main">
+    <img src="3.png" alt=""/>
+    <div id="question">
+
+    </div>
+</div>
+<div class="share">
+    <a class="view-result">查看结果</a>
+</div>
+<div class="result">
+    <div>
+        <p id="result"></p>
+        <p style="margin-top: 10px">没结婚的赶紧吧，<br>已结的也要好好珍惜！</p>
+    </div>
+    <a class="link-in" href="http://mp.linkin.net/"></a>
+</div>
+<script type="text/template" id="tpl">
+    <h3>第 <%=no %> 题（<%=no %>/60）</h3>
+    <div class="title animated fadeInRight">
+        <%=no %>、<%=title %>
+    </div>
+    <div class="radio ui-justify ui-whitespace">
+        <% for(var i = 0, l = option.length; i < l;i++){ var item = option[i]; %>
+        <div class="label">
+            <input type="radio" value="<%=item.value %>" name="option" /> <%=item.text %>
+        </div>
+        <% } %>
+    </div>
+</script>
+<script type="text/javascript">
+    var data = [
+        {
+            title: "有酒窝？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "留长发的？",
+            option: [
+                {text: "是",value: 150},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会跳舞的？",
+            option: [
+                {text: "是",value: 150},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会唱歌的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "人妖非主流浮夸打扮？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "胸围？",
+            option: [
+                {text: "A-B",value: -100},
+                {text: "C-D",value: 200}
+            ]
+        },
+        {
+            title: "眼皮？",
+            option: [
+                {text: "双眼皮",value: 100},
+                {text: "单眼皮",value: 50}
+            ]
+        },
+        {
+            title: "没有谈过恋爱的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "初吻对象是你？",
+            option: [
+                {text: "是",value: 300},
+                {text: "否",value: -200}
+            ]
+        },
+        {
+            title: "性爱对象是你？",
+            option: [
+                {text: "是",value: 500},
+                {text: "否",value: -400}
+            ]
+        },
+        {
+            title: "初恋对象是你？",
+            option: [
+                {text: "是",value: 300},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会游泳？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "不会麻将？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "不会喝酒？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "成绩优秀？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "尊敬长辈？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "喜欢针线活？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "不爱慕虚荣,在你困难时不离不弃？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "爱嗜酒？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "爱抽烟？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "爱说粗口？",
+            option: [
+                {text: "是",value: -300},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "爱染发？",
+            option: [
+                {text: "是",value: -100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "养宠物？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "喜欢种花？",
+            option: [
+                {text: "是",value: 50},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "喜欢小朋友？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会做饭？",
+            option: [
+                {text: "是",value: 300},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "温柔贤惠礼貌待人？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "不懂事。总任性的发脾气？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "总告诉你想你的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "有心事总是找你说？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "懂得自重,不会和别的男人动作亲腻？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会关心你。。不让你抽烟、喝酒的.关心你的经济？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "平时不打扰你的个人生活？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "总缠着你逛街,总要你花钱？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "喜欢买东西或亲手制作东西给你？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "关心你工作或学习？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会按照你喜欢的方式打扮自己的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "不会洗衣服做家务的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "在朋友面前骂你？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "总是和你说要分手？",
+            option: [
+                {text: "是",value: -100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "因为小事和你吵架的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "吵架不管是不是她错。。总先找你的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "每天要你哄她睡觉的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "每天都能打电话给你？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "喜欢和你撒娇？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "只对你乖。。对别人不乖的？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会为你哭的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "总惹你哭的？",
+            option: [
+                {text: "是",value: -100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "很自立不是想要什么都要你买给她的？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "在你朋友面前不任性的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会化妆的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会给你洗衣服的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "成熟稳重的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "跟你在一起不爱笑的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "要你逃课陪她玩的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "考试挂1科？",
+            option: [
+                {text: "是",value: -100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会送你她亲手做的东西？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "总说你丑的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "没照过大头贴的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "挑逗别的男人？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        }
+    ];
+</script>
+<script src="zepto.min.js"></script>
+<script type="text/javascript">
+    var app = {
+        tpl: $('#tpl').html(),
+        question: $('#question'),
+        worth: 1000,
+        no: 0,
+        init: function(){
+            var self = this, worth;
+
+            this.question.on('touchstart', '.label', function(){
+                self.total(parseInt($(this).find('input').val()));
+                if(self.no < data.length - 1) {
+                    self.no++;
+                    self.render();
+                }else{
+                    //self.share();
+                    $('.main').hide();
+                    $('.share').show();
+                }
+            });
+
+            $('.guide').on('touchstart', 'button', function(){
+                $('.guide').hide();
+                $('.main').show();
+                self.render();
+            });
+
+            $('.share').on('touchstart', '.view-result', function(){
+                self.share();
+            });
+        },
+        share: function(){
+
+            //$('.share').hide();
+            $('.main').hide();
+            $('.result').show();
+
+            var worth = this.worth, result;
+            if(worth >= 3500){
+                result = "你的她身价：" + this.worth+" 万，<br> 你要是碰着啦就赶紧娶吧。。迟了就没有了！！";
+            }else if(worth >= 2800){
+                result = "你的她身价：" + this.worth+" 万，<br> 精品";
+            }else if(worth >= 2000){
+                result = "你的她身价：" + this.worth+" 万，<br> 正常";
+            }else {
+                result = "你的她身价：" + this.worth+" 万，<br> 就别要了 ";
+            }
+            $('#result').html(result);
+        },
+        render: function(){
+            var model = data[this.no];
+            model.no = this.no + 1;
+            this.question.html($.tpl(this.tpl, model));
+        },
+        total: function(v){
+            this.worth += v;
+        }
+    };
+    app.init();
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    !function(){function c(b){wx.config({debug:0,appId:"wx76545552ca4bc8af",timestamp:a.timestamp,nonceStr:a.nonceStr,signature:b,jsApiList:["checkJsApi","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo"]}),wx.ready(function(){e()})}function e(){wx.onMenuShareTimeline({title:b.title,link:b.link,imgUrl:b.imgUrl,success:function(){app.share()},cancel:function(){}}),wx.onMenuShareAppMessage({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,type:"link",dataUrl:"",success:function(){app.share()},cancel:function(){}}),wx.onMenuShareQQ({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){app.share()},cancel:function(){}}),wx.onMenuShareWeibo({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){app.share()},cancel:function(){}})}var b,a={timestamp:Date.now(),url:location.href.split("#")[0],nonceStr:Math.random().toString(36).substr(2)};$.get("http://mp.linkin.net/Account/GetSignature",a,function(a){c(a)}),b={title:"你的那个她值多少钱？要不要扔掉！",desc:"任何东西都有自身的价值，衣服、饭菜、楼房，甚至是你身边那位也有哦。快来算算自己的老公或者准老公到底值多少钱吧！",link:"http://wx.hr72.com/20150923/index.html",imgUrl:"http://wx.hr72.com/20150923/logo.jpg"}}();
+</script>
+</body>
+</html>

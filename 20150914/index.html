@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>测测你骨子里的风骚度？</title>
+    <style>body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,header,hgroup,nav,section,article,aside,footer,figure,figcaption,menu,button{margin:0;padding:0}body{font-family:"Helvetica Neue",Helvetica,STHeiTi,sans-serif;line-height:1.5;font-size:16px;color:#000;background-color:#f8f8f8;-webkit-user-select:none;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;outline:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}table{border-collapse:collapse;border-spacing:0}caption,th{text-align:left}fieldset,img{border:0}li{list-style:none}ins{text-decoration:none}del{text-decoration:line-through}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:0}button{-webkit-appearance:none;border:0;background:0}a{-webkit-touch-callout:none;text-decoration:none}:focus{outline:0;-webkit-tap-highlight-color:transparent}em,i{font-style:normal}@media screen and (max-width:319px){html{font-size:85.33333px}}@media screen and (min-width:320px) and (max-width:359px){html{font-size:85.33333px}}@media screen and (min-width:360px) and (max-width:374px){html{font-size:96px}}@media screen and (min-width:375px) and (max-width:383px){html{font-size:100px}}@media screen and (min-width:384px) and (max-width:399px){html{font-size:102.4px}}@media screen and (min-width:400px) and (max-width:413px){html{font-size:106.66667px}}@media screen and (min-width:414px){html{font-size:110.4px}}</style>
+    <style>
+        section{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: white;
+
+            background-size: cover;
+            background-position: 50% 50%;
+            background-image: url("1.jpg");
+        }
+        li{
+            background-color: white;
+            margin: 20px 30px;
+            padding-left: 10px;
+            height: 50px;
+            line-height: 50px;
+            color: black;
+            position: relative;
+        }
+        li:active{
+            background-color: red;
+            color: white;
+        }
+        li span{
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 40px;
+            background-color: #8fc31f;
+            color: white;
+            text-align: center;
+        }
+        footer{
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        h3{
+            font-size: 20px;
+            margin: 20px 0 50px;
+        }
+
+        .animate{
+            animation: float ease-in-out 1.5s infinite;-webkit-animation: float ease-in-out 1.5s infinite;
+        }
+        @-webkit-keyframes float {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            50% {
+                -webkit-transform: translateY(1em);
+                transform: translateY(1em);
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            50% {
+                -webkit-transform: translateY(1em);
+                transform: translateY(1em);
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?e7582b8c916270b4efb1d36b38703323";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body ontouchstart>
+<section style="text-align: center;">
+    <h3>测测你骨子里的风骚度?</h3>
+    <div style="position: absolute;top: 60%;width: 100%;">
+        <button style="padding: 10px;border: 1px solid white;border-radius: 20px;width: 40%;color: black;background-color: white" onclick="app.start()">开始测试</button>
+    </div>
+    <footer onclick="location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.zhiye.emaster.ui'">
+        <p>©效率大师出品</p>
+        <p>专注解决工作效率与执行的团队协作工具</p>
+    </footer>
+</section>
+<section style="display: none">
+    <h5 style="margin: 20px 30px 30px;">你晚上入睡时，所穿的睡衣是什么样的？</h5>
+    <ul>
+        <li onclick="app.result('a')">A、红色的吊带性感睡裙</li>
+        <li onclick="app.result('b')">B、卡通人物的普通睡衣</li>
+        <li onclick="app.result('c')">C、平日里不怎么穿的宽松衣裳</li>
+        <li onclick="app.result('d')">D、质感很舒服普通睡裙</li>
+        <li>测试active</li>
+    </ul>
+    <footer onclick="location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.zhiye.emaster.ui'">
+        <p>©效率大师出品</p>
+        <p>专注解决工作效率与执行的团队协作工具</p>
+    </footer>
+</section>
+<section style="text-align: center;display: none">
+    <!--<img src="2.png" alt="" style="width: 90%;margin-top: 20px" class="animate"/>-->
+    <img src="s.png" alt="" style="position: absolute;right: 20px;top: 20px" />
+    <div style="margin-top: 200px">
+        <h5 style="font-size: 18px;">分享查看结果</h5>
+        <p style="text-align: left;margin: 10px 20px">你已完成了测试，点击右上角分享到朋友圈或发送给朋友，查看结果吧</p>
+    </div>
+    <button style="margin-top:50px;padding: 8px 20px;border: 1px solid white;border-radius: 20px;color: white;" onclick="app.share()">查看结果</button>
+    <footer onclick="location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.zhiye.emaster.ui'">
+        <p>©效率大师出品</p>
+        <p>专注解决工作效率与执行的团队协作工具</p>
+    </footer>
+</section>
+<section style="display: none">
+    <h3 style="text-align: center">效率大师告诉你</h3>
+    <div style="background-color: white;color: black;margin: 15px;padding: 10px">
+        <div class="a" style="display: none">
+            <h5 style="margin-bottom: 10px;font-size: 18px">A、风骚指数90%</h5>
+            <p>不得不说，你真的天生就是一个骚包。诱惑别人对你而言是种无上的乐趣，你喜欢引人注意，特别是异性。在你的观念里，两性道德感并不太重，因此感情也经常处于乱七八糟的状态。在大众眼中，属于风骚到令人发指的人物。</p>
+        </div>
+        <div class="b" style="display: none">
+            <h5 style="margin-bottom: 10px;font-size: 18px">B、风骚指数20%</h5>
+            <p>除非是剧情需要或是某个特别的原因，你才愿意表现出自己略显风骚的一面，比如，去PU B偶尔疯一把，或是需要对某人放电的时候。平日的你并不喜欢这样，言行举止以及服饰都是循规蹈矩型的。基本上，你并不算风骚，在别人眼中有时还有点无趣</p>
+        </div>
+        <div class="c" style="display: none">
+            <h5 style="margin-bottom: 10px;font-size: 18px">C、风骚指数40%</h5>
+            <p>你很想引人注意，可总是找不到正确展现的切入点。你偶尔会想疯狂一下，却总把人吓得远远的。风骚也是你想尝试的主题之一，但你并不擅长表现，属于典型的想骚但骚不起来，甚至在别人眼中还有点搞笑的类型</p>
+        </div>
+        <div class="d" style="display: none">
+            <h5 style="margin-bottom: 10px;font-size: 18px">D、风骚指数70%</h5>
+            <p>用闷骚来形容你真是再恰当不过了。外表看来，你或许是娴静淑女或儒雅绅士，举止得宜，但其实骨子里一把狂野劲儿没处发泄。显然，大家都被你的外表骗了！一旦走入人群，或是遇到看得顺眼的异性，哪怕你不想和人家怎么样，可你就是要想办法吸引对方注意！</p>
+        </div>
+    </div>
+    <div style="position: absolute;top: 65%;width:100%;text-align: center">
+        <button style="padding: 8px 20px;border: 1px solid white;border-radius: 20px;color: white;" onclick="location.href='http://wx.hr72.com/index.html'">更多测试</button>
+    </div>
+    <footer onclick="location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.zhiye.emaster.ui'">
+        <p>©效率大师出品</p>
+        <p>专注解决工作效率与执行的团队协作工具</p>
+    </footer>
+</section>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    var app={};!function(){function c(b){wx.config({debug:0,appId:"wx76545552ca4bc8af",timestamp:a.timestamp,nonceStr:a.nonceStr,signature:b,jsApiList:["checkJsApi","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo"]})}function e(a,b,c,d){var e=new XMLHttpRequest;e.open(a,b,!0),e.send(c?c:null),e.onreadystatechange=function(){if(4==e.readyState){var a;e.status>=200&&e.status<300||304==e.status?(a=e.responseText,d(a)):alert(e.statusText||"ajax error")}}}function f(){wx.onMenuShareTimeline({title:b.title,link:b.link,imgUrl:b.imgUrl,success:function(){app.share()},cancel:function(){}}),wx.onMenuShareAppMessage({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,type:"link",dataUrl:"",success:function(){app.share()},cancel:function(){}}),wx.onMenuShareQQ({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){app.share()},cancel:function(){}}),wx.onMenuShareWeibo({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){app.share()},cancel:function(){}})}var h,a={timestamp:Date.now(),url:location.href.split("#")[0],nonceStr:Math.random().toString(36).substr(2)},b={title:"我的风骚指数是100%，快来测测你的是多少？",desc:"快来测一测，超准哦",link:"http://wx.hr72.com/20150914/index.html",imgUrl:"http://wx.hr72.com/20150914/logo.jpg"},g="http://mp.linkin.net/Account/GetSignature?timestamp="+a.timestamp+"&url="+encodeURIComponent(a.url)+"&nonceStr="+a.nonceStr;e("GET",g,null,function(a){c(a)}),h=document.querySelectorAll("section"),app.start=function(){h[0].style.display="none",h[1].style.display="block"},app.result=function(a){switch(a){case"a":b.title="我的风骚指数是90%，快来测测你的是多少？";break;case"b":b.title="我的风骚指数是20%，快来测测你的是多少？";break;case"c":b.title="我的风骚指数是40%，快来测测你的是多少？";break;case"d":b.title="我的风骚指数是70%，快来测测你的是多少？";break;default:b.title="我的风骚指数是100%，快来测测你的是多少？"}h[1].style.display="none",h[2].style.display="block",h[3].querySelector("."+a).style.display="block",wx.ready(function(){f()})},app.share=function(){h[2].style.display="none",h[3].style.display="block"}}();
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-67787459-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

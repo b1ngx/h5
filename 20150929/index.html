@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <style>body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,header,hgroup,nav,section,article,aside,footer,figure,figcaption,menu,button{margin:0;padding:0}body{font-family:"Helvetica Neue",Helvetica,STHeiTi,sans-serif;line-height:1.5;font-size:16px;color:#000;background-color:#f8f8f8;-webkit-user-select:none;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;outline:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}table{border-collapse:collapse;border-spacing:0}caption,th{text-align:left}fieldset,img{border:0}li{list-style:none}ins{text-decoration:none}del{text-decoration:line-through}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:0}button{-webkit-appearance:none;border:0;background:0}a{-webkit-touch-callout:none;text-decoration:none}:focus{outline:0;-webkit-tap-highlight-color:transparent}em,i{font-style:normal}@media screen and (max-width:319px){html{font-size:85.33333px}}@media screen and (min-width:320px) and (max-width:359px){html{font-size:85.33333px}}@media screen and (min-width:360px) and (max-width:374px){html{font-size:96px}}@media screen and (min-width:375px) and (max-width:383px){html{font-size:100px}}@media screen and (min-width:384px) and (max-width:399px){html{font-size:102.4px}}@media screen and (min-width:400px) and (max-width:413px){html{font-size:106.66667px}}@media screen and (min-width:414px){html{font-size:110.4px}}</style>
+    <style>
+        section{
+            padding: 20px 30px 0;
+            display: none;
+        }
+        .btn{
+            color: #fff;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 41px;
+            text-align: center;
+            border: solid 1px #199d18;
+            border-radius: 4px;
+            background: #10b524;
+            width: 100%;
+        }
+        .btn-group{
+            text-align: center;
+        }
+        .btn-group button{
+            width: 48%;
+            border: 2px solid #ff7241;
+            line-height: 40px;
+            color: #ff7241;
+        }
+        .input{
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        footer{
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+        }
+        #share{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            opacity: .75;
+            display: none;
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?e7582b8c916270b4efb1d36b38703323";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<section>
+    <h1><img src="title.png" alt="" style="width: 90%"/></h1>
+    <p>漫漫人森路哇，能长大是一件不容易的事情，这么多年你都依靠着什么慢慢长成一个大人的，快来测测吧！</p>
+    <div style="margin-top: 10px">
+        <img src="ico.jpg" alt="" style="width: 100%" />
+    </div>
+    <div>
+        <input type="text" class="input" id="name" placeholder="请输入名字测试"/>
+    </div>
+    <div style="margin: 10px 0">
+        <button class="btn" onclick="app.test()">开始测试</button>
+    </div>
+</section>
+<section style="padding: 15px 15px 0">
+    <h2 style="font-size: 18px"><span style="color: #EE7600" id="kao"></span> 是靠这长大的</h2>
+    <!--<div style="margin: 10px 0" onclick="location.href='http://www.linkin.net'">
+        <img src="2.jpg" alt="" style="width: 100%"/>
+    </div>-->
+    <div style="margin: 10px 0">
+        <img src="http://cdn.bbyxy.com/quiz/1/img/zhangda/16.jpg" id="result" alt="" style="width: 100%"/>
+    </div>
+    <div class="btn-group">
+        <button onclick="location.href='http://www.linkin.net/wx'">我要测试</button>
+        <button onclick="app.toShare()">分享</button>
+    </div>
+    <!--<footer onclick="location.href='http://www.linkin.net'">
+        <p>©金领英才网出品</p>
+        <p>专注服务精英人才的O2O平台</p>
+    </footer>-->
+    <div style="margin-top: 15px" onclick="location.href='http://www.linkin.net/mobile'">
+        <img src="2.jpg" alt="" style="width: 100%"/>
+    </div>
+</section>
+<div id="share" onclick="this.style.display = 'none'">
+    <img src="share.png" style="width: 100%" alt=""/>
+</div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="md5.min.js"></script>
+<script type="text/javascript">
+    var app={initialize:function(){this.section=document.querySelectorAll("section"),this.options={timestamp:Date.now(),url:location.href.split("#")[0],nonceStr:Math.random().toString(36).substr(2),title:"杨昆长这么大主要是靠...",desc:"漫漫人森路哇，能长大是一件不容易的事情，这么多年你都依靠着什么慢慢长成一个大人的，快来测测吧！",link:"http://wx.hr72.com/20150929/index.html",imgUrl:"http://wx.hr72.com/20150929/ico.jpg"},this.getSignature(),this.load()},isWeixin:function(){var a=navigator.userAgent.toLowerCase();return t=-1!=a.indexOf("micromessenger")},ajax:function(a,b,c,d){var e=new XMLHttpRequest;e.open(a,b,!0),e.send(c?c:null),e.onreadystatechange=function(){if(4==e.readyState){var a;e.status>=200&&e.status<300||304==e.status?(a=e.responseText,d(a)):alert(e.statusText||"ajax error")}}},getSignature:function(){var a=this,b=a.options,c="http://mp.linkin.net/Account/GetSignature?timestamp="+b.timestamp+"&url="+encodeURIComponent(b.url)+"&nonceStr="+b.nonceStr;this.ajax("GET",c,null,function(b){a.wxConfig(b)})},wxConfig:function(a){var b=this,c=this.options;wx.config({debug:0,appId:"wx76545552ca4bc8af",timestamp:c.timestamp,nonceStr:c.nonceStr,signature:a,jsApiList:["checkJsApi","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo"]}),wx.ready(function(){b.shareOnReady()})},shareOnReady:function(){var a=this,b=a.options;wx.onMenuShareTimeline({title:b.title,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}}),wx.onMenuShareAppMessage({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,type:"link",dataUrl:"",success:function(){a.share()},cancel:function(){}}),wx.onMenuShareQQ({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}}),wx.onMenuShareWeibo({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}})},share:function(){},test:function(){var a=document.querySelector("#name").value;return a.replace(/(^\s*)|(\s*$)/g,"")?(location.href="http://www.linkin.net/wx?name="+a,void 0):(alert("请输入您的姓名"),void 0)},load:function(){var a=this.section,b=this.getQueryString("name");return b&&(b=decodeURIComponent(b)),b&&b.replace(/(^\s*)|(\s*$)/g,"")?(this.result(b),void 0):(a[0].style.display="block",a[1].style.display="none",void 0)},result:function(a){var b=this.section,c=md5(a),d=c.slice(c.length-1),e=parseInt(d,16).toString(10)-0+1;document.querySelector("#kao").innerText=a,document.querySelector("#result").src="http://cdn.bbyxy.com/quiz/1/img/zhangda/"+e+".jpg",b[0].style.display="none",b[1].style.display="block",this.options.title=a+"长这么大主要是靠...",this.options.link="http://wx.hr72.com/20150929/index.html?name="+a,this.shareOnReady()},getQueryString:function(a){var b=new RegExp("(^|&)"+a+"=([^&]*)(&|$)"),c=window.location.search.substr(1).match(b);return c?c[2]:null},toShare:function(){document.querySelector("#share").style.display="block"}};app.initialize();
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-67787459-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

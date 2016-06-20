@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>通过月亮可以测出你的小气度？</title>
+    <style>body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,header,hgroup,nav,section,article,aside,footer,figure,figcaption,menu,button{margin:0;padding:0}body{font-family:"Helvetica Neue",Helvetica,STHeiTi,sans-serif;line-height:1.5;font-size:16px;color:#000;background-color:#f8f8f8;-webkit-user-select:none;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;outline:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}table{border-collapse:collapse;border-spacing:0}caption,th{text-align:left}fieldset,img{border:0}li{list-style:none}ins{text-decoration:none}del{text-decoration:line-through}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:0}button{-webkit-appearance:none;border:0;background:0}a{-webkit-touch-callout:none;text-decoration:none}:focus{outline:0;-webkit-tap-highlight-color:transparent}em,i{font-style:normal}@media screen and (max-width:319px){html{font-size:85.33333px}}@media screen and (min-width:320px) and (max-width:359px){html{font-size:85.33333px}}@media screen and (min-width:360px) and (max-width:374px){html{font-size:96px}}@media screen and (min-width:375px) and (max-width:383px){html{font-size:100px}}@media screen and (min-width:384px) and (max-width:399px){html{font-size:102.4px}}@media screen and (min-width:400px) and (max-width:413px){html{font-size:106.66667px}}@media screen and (min-width:414px){html{font-size:110.4px}}</style>
+    <style>
+        html {
+            width: 100%;
+            min-width: 300px;
+            height: 100%;
+        }
+        body {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            max-width: 640px;
+            min-height: 410px;
+            margin: 0 auto;
+            background-color: #347ec5;
+        }
+        section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            color: white;
+        }
+        li{
+            background-color: white;
+            margin: 20px 30px;
+            padding-left: 10px;
+            height: 50px;
+            line-height: 50px;
+            color: black;
+            position: relative;
+        }
+        li:active{
+            background-color: #4394e5;
+            color: white;
+        }
+        li span{
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 40px;
+            background-color: #8fc31f;
+            color: white;
+            text-align: center;
+        }
+        footer{
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        h3{
+            font-size: 20px;
+            margin: 20px 0 50px;
+        }
+
+        .float{
+            animation: float ease-in-out 1.5s infinite;-webkit-animation: float ease-in-out 1.5s infinite;
+        }
+        @-webkit-keyframes float {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            50% {
+                -webkit-transform: translateY(1em);
+                transform: translateY(1em);
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+            50% {
+                -webkit-transform: translateY(1em);
+                transform: translateY(1em);
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+
+        @-webkit-keyframes sign-sway {
+            0% {
+                -webkit-transform: translateX(-15%) rotate(3deg);
+                transform: translateX(-15%) rotate(3deg);
+            }
+            50% {
+                -webkit-transform: translateX(15%) rotate(-3deg);
+                transform: translateX(15%) rotate(-3deg);
+            }
+            100% {
+                -webkit-transform: translateX(-15%) rotate(3deg);
+                transform: translateX(-15%) rotate(3deg);
+            }
+        }
+        @keyframes sign-sway {
+            0% {
+                -moz-transform: translateX(-15%) rotate(3deg);
+                -ms-transform: translateX(-15%) rotate(3deg);
+                -webkit-transform: translateX(-15%) rotate(3deg);
+                transform: translateX(-15%) rotate(3deg);
+            }
+            50% {
+                -moz-transform: translateX(15%) rotate(-3deg);
+                -ms-transform: translateX(15%) rotate(-3deg);
+                -webkit-transform: translateX(15%) rotate(-3deg);
+                transform: translateX(15%) rotate(-3deg);
+            }
+            100% {
+                -moz-transform: translateX(-15%) rotate(3deg);
+                -ms-transform: translateX(-15%) rotate(3deg);
+                -webkit-transform: translateX(-15%) rotate(3deg);
+                transform: translateX(-15%) rotate(3deg);
+            }
+        }
+        .sign {
+            -moz-animation: sign-sway 5s infinite;
+            -webkit-animation: sign-sway 5s infinite;
+            animation: sign-sway 5s infinite;
+            -moz-animation-timing-function: ease;
+            -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+            margin: 2em auto;
+            position: relative;
+        }
+        .sign:before,
+        .sign:after {
+            content: "";
+            display: block;
+            height: 10em;
+            bottom: 90%;
+            width: 2px;
+            background: red;
+            position: absolute;
+        }
+        .sign:before {
+            left: 10%;
+            -moz-transform: rotate(15deg);
+            -ms-transform: rotate(15deg);
+            -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+        }
+        .sign:after {
+            right: 10%;
+            -moz-transform: rotate(-15deg);
+            -ms-transform: rotate(-15deg);
+            -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?e7582b8c916270b4efb1d36b38703323";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<section style="text-align: center;">
+    <div style="margin-top: 20px">
+        <img src="l.png" alt="" style="width:220px;"/>
+    </div>
+    <img src="a.png" alt="" class="sign" style="margin-top: -30px;height: 160px" />
+    <h3>通过月亮可以测出你的小气度</h3>
+    <div style="margin-top: 20px">
+        <button style="width: 40%;padding: 10px;color: #1f64b4;border: 1px solid white;border-radius: 20px;background-color: white" onclick="app.start()">开始测试</button>
+    </div>
+    <footer onclick="location.href='http://mp.linkin.net'">
+        <p>©金领英才网出品</p>
+        <p>专注服务精英人才的O2O平台</p>
+    </footer>
+</section>
+<section style="display: none">
+    <img src="l.png" style="width: 120px;margin: 20px 30px 0;" alt=""/>
+    <h5 style="margin: 20px 30px 30px;">下面四种月的形状，你最欣赏哪一种？</h5>
+    <ul>
+        <li onclick="app.result('a')">A、残月</li>
+        <li onclick="app.result('b')">B、上弦月或下弦月</li>
+        <li onclick="app.result('c')">C、眉月</li>
+        <li onclick="app.result('d')">D、满月</li>
+    </ul>
+    <footer onclick="location.href='http://mp.linkin.net'">
+        <p>©金领英才网出品</p>
+        <p>专注服务精英人才的O2O平台</p>
+    </footer>
+</section>
+<section style="display: none">
+    <img src="l.png" style="width: 120px;margin: 20px 30px 0;" alt=""/>
+    <img src="s.png" alt="" style="position: absolute;right: 20px;top: 20px" />
+    <div style="margin-top: 140px;text-align: center">
+        <h5 style="font-size: 18px;">分享查看结果</h5>
+        <p style="text-align: left;margin: 10px 20px">你已完成了测试，点击右上角分享到朋友圈或发送给朋友，查看结果吧</p>
+        <button style="margin-top:50px;padding: 8px 20px;border: 1px solid white;border-radius: 20px;color: white;" onclick="app.close()">关闭</button>
+    </div>
+    <footer onclick="location.href='http://mp.linkin.net'">
+        <p>©金领英才网出品</p>
+        <p>专注服务精英人才的O2O平台</p>
+    </footer>
+</section>
+<section style="display: none">
+    <img src="l.png" style="width: 120px;margin: 20px 30px 0;" alt=""/>
+    <div style="background-color: white;color: black;margin: 30px 20px;padding: 10px">
+        <div class="a" style="display: none">
+            <h5 style="margin-bottom: 10px;font-size: 18px">A、小气指数 ★☆</h5>
+            <p>你是个任凭直觉行动的人，行动派的你，花起钱行动力也惊人，想买就买，沒现金就先刷卡，当时也不会想以后到底付不付得出来，朋友起闹也就大方掏钱请客，容易变成众人眼中的凯子，沒有机会成为小气鬼。</p>
+        </div>
+        <div class="b" style="display: none">
+            <h5 style="margin-bottom: 10px;font-size: 18px">B、小气指数 ★★★★☆</h5>
+            <p>这种人向来都是凭个人意识做人处事，其实听不太进去别人的說法，过度注重自我存在，所以不太会为人着想，久而久之成为别人眼中难以沟通的麻烦人物，行事就不大方，在金钱方面，会对别人大方才怪，要凹你，不如杀了你还比较快。</p>
+        </div>
+        <div class="c" style="display: none">
+            <h5 style="margin-bottom: 10px;font-size: 18px">C、小气指数 ★★★</h5>
+            <p>你是个充满自信的人，对自己做的事或花钱，都有一套计划表，该花则花，不太喜欢花计划之外的金钱，所以想凹喜欢眉月或残月的人请客，请先列入计划表中，让他们自行评估何时是最合适的时机，不然别想凹到一毛钱。不过这样的人，也粉容易成为别人眼中的小气鬼。</p>
+        </div>
+        <div class="d" style="display: none">
+            <h5 style="margin-bottom: 10px;font-size: 18px">D、小气指数 ★★☆</h5>
+            <p>你是个注重心灵成长的人，表达能力也颇为不错，你粉肯花钱去充实自我，但是其他的花费，你倾向敬谢不敏，不过你的說话技巧高超，总能化解那些要你出钱的尴尬场面，全身而退。</p>
+        </div>
+    </div>
+    <div style="position: absolute;top: 65%;width:100%;text-align: center">
+        <button style="padding: 8px 20px;border: 1px solid white;border-radius: 20px;color: white;" onclick="location.href='http://wx.hr72.com/index.html'">更多测试</button>
+    </div>
+    <footer onclick="location.href='http://mp.linkin.net'">
+        <p>©金领英才网出品</p>
+        <p>专注服务精英人才的O2O平台</p>
+    </footer>
+</section>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    var app={initialize:function(){this.section=document.querySelectorAll("section"),this.options={timestamp:Date.now(),url:location.href.split("#")[0],nonceStr:Math.random().toString(36).substr(2),title:"我的小气指数 ★☆，快来测测你的是多少？",desc:"快来测一测哦，超准的",link:"http://wx.hr72.com/20150917/index.html",imgUrl:"http://wx.hr72.com/20150917/logo.jpg"},this.isWeixin()&&this.getSignature()},isWeixin:function(){var a=navigator.userAgent.toLowerCase();return"micromessenger"==a.match(/MicroMessenger/i)?!0:!1},ajax:function(a,b,c,d){var e=new XMLHttpRequest;e.open(a,b,!0),e.send(c?c:null),e.onreadystatechange=function(){if(4==e.readyState){var a;e.status>=200&&e.status<300||304==e.status?(a=e.responseText,d(a)):alert(e.statusText||"ajax error")}}},getSignature:function(){var a=this,b=a.options,c="http://mp.linkin.net/Account/GetSignature?timestamp="+b.timestamp+"&url="+encodeURIComponent(b.url)+"&nonceStr="+b.nonceStr;this.ajax("GET",c,null,function(b){a.wxConfig(b)})},wxConfig:function(a){var b=this.options;wx.config({debug:0,appId:"wx76545552ca4bc8af",timestamp:b.timestamp,nonceStr:b.nonceStr,signature:a,jsApiList:["checkJsApi","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo"]})},shareOnReady:function(){var a=this,b=a.options;wx.onMenuShareTimeline({title:b.title,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}}),wx.onMenuShareAppMessage({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,type:"link",dataUrl:"",success:function(){a.share()},cancel:function(){}}),wx.onMenuShareQQ({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}}),wx.onMenuShareWeibo({title:b.title,desc:b.desc,link:b.link,imgUrl:b.imgUrl,success:function(){a.share()},cancel:function(){}})},share:function(){var a=this.section;a[2].style.display="none",a[3].style.display="block"},close:function(){var a=this.section;a[2].style.display="none",a[1].style.display="block"},result:function(a){var b=this,c=b.options,d=b.section;switch(a){case"a":c.title="我的小气指数 ★☆，快来测测你的是多少？";break;case"b":c.title="我的小气指数 ★★★★☆，快来测测你的是多少？";break;case"c":c.title="我的小气指数 ★★★，快来测测你的是多少？";break;case"d":c.title="我的小气指数 ★★☆，快来测测你的是多少？";break;default:c.title="我的小气指数 ★☆，快来测测你的是多少？"}d[1].style.display="none",d[2].style.display="block",d[3].querySelector(".a").style.display="none",d[3].querySelector(".b").style.display="none",d[3].querySelector(".c").style.display="none",d[3].querySelector(".d").style.display="none",d[3].querySelector("."+a).style.display="block",wx.ready(function(){b.shareOnReady()})},start:function(){var a=this.section;a[0].style.display="none",a[1].style.display="block"}};app.initialize();
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-67787459-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

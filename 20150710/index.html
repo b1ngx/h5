@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>测测你老公值多少钱？要不要扔掉？</title>
+    <link rel="stylesheet" href="frozen.css"/>
+    <style>
+        body{
+            color: #fff;
+        }
+        .guide,.main,.share,.result{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            background-size:cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+        .guide{
+            background-image: url("1.jpg");
+            text-align: center;
+        }
+        .guide button{
+            background: #f75150;
+            position: absolute;
+            left: 20%;
+            bottom: 50px;
+            width: 60%;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 30px;
+            font-size: 24px;
+            border: 0;
+            color: #fff;
+        }
+        .guide button:active{
+            -webkit-transform: scale(0.96);
+            transform: scale(0.96);
+        }
+        footer{
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+        .main{
+            display: none;
+            background-color: #d9ecff;
+            text-align: center;
+        }
+        .main img{
+            max-height: 40%;
+            display: inline-block;
+            margin-top: 40px;
+        }
+        .main h3{
+            position: absolute;
+            top: 8px;
+            width: 100%;
+            text-align: center;
+            color: #333;
+        }
+        .main .title{
+            font-size: 18px;
+            color: #fff;
+            background-color: #f75150;
+            width: 70%;
+            margin: -30px auto 0;
+            height: 40px;
+            padding: 40px 20px;
+            text-align: left;
+        }
+        .main .radio{
+            width: 60%;
+            padding: 0;
+            margin: 30px auto 0;
+        }
+        .main .label{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 80px;
+            background-color: #f75150;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+        }
+        .main .label:active{
+            -webkit-transform: scale(0.90);
+            transform: scale(0.90);
+        }
+        .main .label:nth-child(2){
+            background-color: #ffdb3c;
+        }
+        .main input{
+            display: none;
+        }
+        .share{
+            display: none;
+            background-image: url("3.jpg");
+        }
+        .view-result{
+            position: absolute;
+            top: 44%;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+        }
+        .result{
+            display: none;
+            background-image: url("4.jpg");
+        }
+        .result div{
+            position: absolute;
+            top: 33%;
+            color: #333;
+            text-align: center;
+            width: 70%;
+            left: 15%;
+            -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+            font-size: 18px;
+        }
+        .link-in{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 140px;
+            width: 100%;
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?5120176294a5a95be934f762c9d0d512";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div class="guide">
+    <button>开始测试</button>
+    <footer>
+        金领英才出品 www.linkin.net
+    </footer>
+</div>
+<div class="main">
+    <img src="3.png" alt=""/>
+    <div id="dest">
+
+    </div>
+</div>
+<div class="share">
+    <a class="view-result">查看结果</a>
+</div>
+<div class="result">
+    <div>
+        <p id="result"></p>
+        <p style="margin-top: 10px">没嫁的赶紧嫁了，<br>已嫁的也要好好珍惜！</p>
+    </div>
+    <a class="link-in" href="http://m.linkin.net/"></a>
+</div>
+<script type="text/template" id="tpl">
+    <h3>第 <%=index %> 题（<%=index %>/27）</h3>
+    <div class="title">
+        <%=index %>、<%=title %>
+    </div>
+    <div class="radio ui-justify ui-whitespace">
+        <% for(var i = 0, l = option.length; i < l;i++){ var item = option[i]; %>
+        <div class="label">
+            <input type="radio" value="<%=item.value %>" name="option" /> <%=item.text %>
+        </div>
+        <% } %>
+    </div>
+</script>
+<script type="text/javascript">
+    var data = [
+        {
+            title: "会画画？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会跳舞？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会唱歌？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会做饭？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "没日没夜打游戏？",
+            option: [
+                {text: "是",value: -100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "经常运动？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "抽烟酗酒？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "喜欢和小孩子玩？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会称赞你做的饭？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "幽默风趣的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "愿意陪你看肥皂剧？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会介绍他的朋友给你认识？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "平时不打扰你的个人生活？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "打扮清爽不邋遢的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "不会干家务的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "经常吵架的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "吵架不管是谁错，总是他先找你？",
+            option: [
+                {text: "是",value: 300},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "每天哄你睡觉的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会为你哭的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "总惹你哭的？",
+            option: [
+                {text: "是",value: -100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "有什么好事首先想到你？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会做有情调的事？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "成熟稳重的？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "跟你在一起不爱笑的？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "会送你他亲手做的东西？",
+            option: [
+                {text: "是",value: 100},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "总是说很忙没时间陪你？",
+            option: [
+                {text: "是",value: -200},
+                {text: "否",value: 0}
+            ]
+        },
+        {
+            title: "多忙也抽时间陪你吃饭？",
+            option: [
+                {text: "是",value: 200},
+                {text: "否",value: 0}
+            ]
+        }
+    ];
+</script>
+<script src="zepto.min.js"></script>
+<script type="text/javascript">
+    var app = {
+        tpl: $('#tpl').html(),
+        dest: $('#dest'),
+        worth: 1000,
+        index: 0,
+        init: function(){
+            var self = this, worth;
+
+            this.dest.on('touchstart', '.label', function(){
+                self.total(parseInt($(this).find('input').val()));
+                if(self.index < data.length - 1) {
+                    self.index++;
+                    self.render();
+                }else{
+                    //self.share();
+                    $('.main').hide();
+                    $('.share').show();
+                }
+            });
+
+            $('.guide').on('touchstart', 'button', function(){
+                $('.guide').hide();
+                $('.main').show();
+                self.render();
+            });
+
+            $('.share').on('touchstart', '.view-result', function(){
+                self.share();
+            });
+        },
+        share: function(){
+
+            //$('.share').hide();
+            $('.main').hide();
+            $('.result').show();
+
+            var worth = this.worth, result;
+            if(worth >= 3500){
+                result = "你老公身价：" + this.worth+" 万，<br> 钻石精品";
+            }else if(worth >= 2500){
+                result = "你老公身价：" + this.worth+" 万，<br> 良品";
+            }else if(worth >= 1500){
+                result = "你老公身价：" + this.worth+" 万，<br> 正常";
+            }else {
+                result = "你老公身价：" + this.worth+" 万，<br> 要重新改造了";
+            }
+            $('#result').html(result);
+        },
+        render: function(){
+            var model = data[this.index];
+            model.index = this.index + 1;
+            this.dest.html($.tpl(this.tpl, model));
+        },
+        total: function(v){
+            this.worth += v;
+        }
+    };
+    app.init();
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="wx.js"></script>
+</body>
+</html>

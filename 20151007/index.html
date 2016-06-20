@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>测一测，你是传说中的优质女婿吗？</title>
+    <style>body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,header,hgroup,nav,section,article,aside,footer,figure,figcaption,menu,button{margin:0;padding:0}body{font-family:"Helvetica Neue",Helvetica,STHeiTi,sans-serif;line-height:1.5;font-size:16px;color:#000;background-color:#f8f8f8;-webkit-user-select:none;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;outline:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}table{border-collapse:collapse;border-spacing:0}caption,th{text-align:left}fieldset,img{border:0}li{list-style:none}ins{text-decoration:none}del{text-decoration:line-through}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;outline:0}button{-webkit-appearance:none;border:0;background:0}a{-webkit-touch-callout:none;text-decoration:none}:focus{outline:0;-webkit-tap-highlight-color:transparent}em,i{font-style:normal}@media screen and (max-width:319px){html{font-size:85.33333px}}@media screen and (min-width:320px) and (max-width:359px){html{font-size:85.33333px}}@media screen and (min-width:360px) and (max-width:374px){html{font-size:96px}}@media screen and (min-width:375px) and (max-width:383px){html{font-size:100px}}@media screen and (min-width:384px) and (max-width:399px){html{font-size:102.4px}}@media screen and (min-width:400px) and (max-width:413px){html{font-size:106.66667px}}@media screen and (min-width:414px){html{font-size:110.4px}}</style>
+    <style>
+        body{
+            background-color: #f4f5ef;
+        }
+        .first{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+
+            background-color: #f4f5ef;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-image: url("1.jpg");
+        }
+        .first button{
+            background-color: #d93a70;
+            color: white;
+            border: none;
+            border-radius: 22px;
+            position: absolute;
+            width: 180px;
+            height: 44px;
+            line-height: 44px;
+            top: 70%;
+            left: 50%;
+            margin-left: -90px;
+        }
+        .question{
+            position: absolute;
+            width: 100%;
+            height: 33%;
+            background-color: #2e87c1;
+            color: white;
+        }
+        .question p{
+            text-align:  center;
+            margin-top: 10px;
+        }
+        .question h4{
+            margin: 30px 20px 0;
+            font-size: 18px;
+        }
+        .answer{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            text-align: center;
+            color: white;
+        }
+        .answer input{
+            display: none;
+        }
+        .answer div{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 100%;
+            text-align: center;
+            font-size: 18px;
+            color: black;
+            background-color: white;
+        }
+        .answer div:nth-child(2){
+            margin-left: 20%;
+        }
+        .answer div:active{
+            background-color: #2e87c1;
+            color: white;
+        }
+        .multiple{
+            top: 36%;
+        }
+        .multiple div{
+            width: 80%;
+            border-radius: 0;
+            height: 49px;
+            line-height: 49px;
+            margin-top: 10px;
+            text-align: left;
+            padding-left: 15px;
+            font-size: 16px;
+        }
+        .multiple div:nth-child(2){
+            margin-left: 0;
+        }
+        .logo{
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            background-color: #2e87c1;
+            background-image: url("logo.png");
+            background-position:center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+        }
+        .result{
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            height: 30%;
+            text-align: center;
+        }
+        .result h4{
+            font-size: 18px;
+            margin-top: 50px;
+        }
+        .result p{
+            color: #666;
+        }
+        .oa{
+            position: absolute;
+            width: 100%;
+            top: 60%;
+            text-align: center;
+        }
+        .oa button{
+            width: 150px;
+            height: 42px;
+            line-height: 42px;
+            border-radius: 21px;
+            background-color:#2e87c1;
+            color: white;
+        }
+        .oa p{
+            color: #666;
+            padding: 20px;
+            text-align: left;
+        }
+        #share{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            opacity: .75;
+            display: none;
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?e7582b8c916270b4efb1d36b38703323";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <section class="first">
+        <button onclick="app.start()">点击测试</button>
+    </section>
+    <section id="st" style="display: none"></section>
+    <section style="display: none">
+        <div class="logo"></div>
+        <div class="result" id="result"></div>
+        <div class="oa">
+            <button onclick="location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.zhiye.emaster.ui'">下载效率大师</button>
+            <button onclick="document.querySelector('#share').style.display = 'block'">发送给朋友</button>
+            <p>中国好女婿独门秘笈，教你如何搞定丈母娘！</p>
+        </div>
+    </section>
+    <div id="share" onclick="this.style.display = 'none'">
+        <img src="share.png" style="width: 100%" alt=""/>
+    </div>
+    <script type="text/template" id="tpl">
+        <div class="question">
+            <p>第 <%=IND %> 题 ( <%=IND %>/11 )</p>
+            <h4><%=IND %>. <%=question %></h4>
+        </div>
+        <div class="answer <% if(typeof multiple != 'undefined' && multiple){ %> multiple <%}%>">
+            <% for(var i=0, l= option.length;i < l;i++){ %>
+            <div onclick="app.result(this)"><input type="radio" name="answer" value="<%=option[i].value %>"><%=option[i].text %></div>
+            <% } %>
+        </div>
+    </script>
+    <script type="text/template" id="rtpl">
+        <h4>测试结果：<%=h %></h4>
+        <p>丈母娘：<%=p %></p>
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        var QA = [{
+            question: "有房？",
+            option: [
+                {text: "是",value: 30},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "年薪20w？",
+            option: [
+                {text: "是",value: 10},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "身高180cm？",
+            option: [
+                {text: "是",value: 20},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "相貌堂堂？",
+            option: [
+                {text: "是",value: 10},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "北上广户口？",
+            option: [
+                {text: "是",value: 30},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "单套房大于150平米或多套房？",
+            option: [
+                {text: "是",value: 20},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "国土资源局、税务局、人事局等抢手部门公务员？",
+            option: [
+                {text: "是",value: 20},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "银行存款100w+？",
+            option: [
+                {text: "是",value: 10},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "工作好,年薪50w+？",
+            option: [
+                {text: "是",value: 20},
+                {text: "否",value: 0}
+            ]
+        },{
+            question: "几代？",
+            multiple: true,
+            option: [
+                {text: "A: 富一代",value: 90},
+                {text: "B: 富二代",value: 110},
+                {text: "C: 官二代",value: 110},
+                {text: "D: 其他",value: 0}
+            ]
+        },{
+            question: "年龄比女方年长几岁？",
+            multiple: true,
+            option: [
+                {text: "A: 0~10岁",value: 10},
+                {text: "B: 10~20岁",value: 5},
+                {text: "C: 30岁~40岁",value: 0},
+                {text: "D: 40岁以上",value: 20},
+                {text: "E: 比女儿年纪小",value: 10}
+            ]
+        }];
+    </script>
+    <script>
+        //解决ios上active不能激活问题
+        //或在body上添加ontouchstart
+        document.addEventListener('touchstart', function(){}, false);
+    </script>
+    <script src="wx.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-67787459-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
